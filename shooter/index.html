@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Space Shooter Demo</title>
+    <link rel="stylesheet" href="css/main.css" name="www-core">
+</head>
+<body>
+<!-- The canvas for the panning background -->
+<canvas id="background" width="1200" height="600">
+    Your browser does not support canvas. Please try again with a different browser.
+</canvas>
+<!-- The canvas for all enemy ships and bullets -->
+<canvas id="main" width="1200" height="600">
+</canvas>
+<!-- The canvas the ship uses (can only move up
+ one forth the screen. -->
+<canvas id="ship" width="1200" height="600">
+</canvas>
+<div class="score">SCORE: <span id="score"></span></div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

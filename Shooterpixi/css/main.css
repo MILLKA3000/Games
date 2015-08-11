@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    cursor: none;
+    z-index: 2;
+}
+
+#pb_loader{
+    width: 100px;
+    color:white;
+    z-index: 1;
+}

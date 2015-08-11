@@ -4,20 +4,27 @@ var Enemy = function Enemy(count) {
 
     this.enemy.health = ENEMY_1_HEALTH;
 
-    this.enemy.bar = new PIXI.Graphics();
-
-
     this.enemy.x = Math.floor((Math.random() * (window.innerWidth)));
     this.enemy.y = -50;
-
-    this.enemy.bar.beginFill(0xFFFF00);
-    this.enemy.bar.drawRect(this.enemy.x-35, this.enemy.y-40, 40, 5);
 
     this.enemy.rotation = 3.15;
     this.enemy.count = count;
 
-    init.enemy.addChild(this.enemy.bar);
+    this.enemy.bar = new Health(this);
+
     init.enemy.addChild(this.enemy);
 
+
+};
+
+var Health = function Health(enemy) {
+    this.bar = new PIXI.Graphics();
+
+    this.bar.w = 40;
+
+    this.bar.beginFill(0xFFFF00);
+    this.bar.drawRect(enemy.enemy.x-35,enemy.enemy.y-40 ,this.bar.w, 5);
+
+    return init.enemy.addChild(this.bar);
 
 };

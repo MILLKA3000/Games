@@ -32,19 +32,22 @@ Ship.prototype.coordinateShip = function(e) {
 
 Ship.prototype.controls = function(){
     self = this;
-    $('body')
-        .mousemove(function(e){
-            self.coordinateShip(e);
-        });
-
+    var interval;
     var cursorX;
     var cursorY;
     document.onmousemove = function(e) {
+        self.coordinateShip(e)
         cursorX = e.pageX;
         cursorY = e.pageY;
     };
 
-    setInterval(checkCursor, SPEED_SHIP_SHOT);
+    document.onmousedown = function(e) {
+        interval = setInterval(checkCursor, SPEED_SHIP_SHOT);
+    };
+
+    document.onmouseup = function() {
+        clearInterval(interval);
+    };
 
     function checkCursor(){
         s = new Shot();

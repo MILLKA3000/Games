@@ -1,13 +1,13 @@
 var Init;
 Init = function Init() {
-    requestAnimationFrame( animate );
+    requestAnimationFrame(animate);
 
     this.stage = new PIXI.Container();
-    this.enemy =  new PIXI.Container();
-    this.shot =  new PIXI.Container();
+    this.enemy = new PIXI.Container();
+    this.shot = new PIXI.Container();
 
-    this.score = new PIXI.Text("SCORE: "+SCORE, {font: "14px Helvetica", fill: "white"});
-    this.money = new PIXI.Text("MONEY: "+MONEY+"$", {font: "14px Helvetica", fill: "white"});
+    this.score = new PIXI.Text("SCORE: " + SCORE, {font: "14px Helvetica", fill: "white"});
+    this.money = new PIXI.Text("MONEY: " + MONEY + "$", {font: "14px Helvetica", fill: "white"});
 
     this.renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
 
@@ -32,48 +32,68 @@ Init = function Init() {
 
     collided = false;
     self = this;
-    function animate(){
-        requestAnimationFrame( animate );
+    function animate() {
+        requestAnimationFrame(animate);
 
         init.space.tilePosition.y += 1;
 
-        init.shot.children.forEach(function(child) {
+        /**
+         * for clear bullets
+         */
+        init.shot.children.forEach(function (child) {
             child.y -= SPEED_SHIP_BULLET;
-            if (child.y < -child.height)
+            if (child.y < -25)
                 init.shot.removeChild(child);
-
 
         });
 
-        init.enemy.children.forEach(function(child) {
+        init.enemy.children.forEach(function (child) {
+
             child.y += SPEED_SHIP_BULLET;
-            if (child.y > window.innerHeight) {
 
-                init.enemy.removeChild(child);
+            /**
+             * for new ship
+             */
+            if (child.y > window.innerHeight + 100) {
+
                 init.enemy.removeChild(child.bar);
+                init.enemy.removeChild(child);
+                if (init.enemy.children.length < ENEMY_COUNT) {
+                    init.addEnemy();
+                }
 
-                enemy = new Enemy();
             }
-
-            if (child.getBounds().contains(ship.ship.x+30, ship.ship.y) || child.getBounds().contains(ship.ship.x, ship.ship.y))
-            {
+            /**
+             * GAME OVER
+             */
+            if (child.getBounds().contains(ship.ship.x + 30, ship.ship.y) || child.getBounds().contains(ship.ship.x, ship.ship.y)) {
                 //collided = true;
             }
 
-            init.shot.children.forEach(function(bullet) {
-                if (child.getBounds().contains(bullet.x, bullet.y) || child.getBounds().contains(bullet.x-30, bullet.y)){
+            /**
+             * Find collidions
+             */
+            init.shot.children.forEach(function (bullet) {
+                if (child.getBounds().contains(bullet.x, bullet.y) || child.getBounds().contains(bullet.x - 30, bullet.y)) {
                     child.health -= bullet.damage;
                     init.shot.removeChild(bullet);
-                    init.enemy.bar.x=20;
-                    if(child.health <= 0) {
-                        SCORE +=100;
-                        MONEY +=5;
-                        init.enemy.removeChild(child);
-                        init.enemy.removeChild(child.bar);
 
-                        init.score.text = "SCORE: "+SCORE;
-                        init.money.text = "MONEY: "+MONEY+"$";
-                        enemy = new Enemy();
+                    /**
+                     * enemy dead
+                     */
+                    if (child.health <= 0) {
+                        SCORE += 100;
+                        MONEY += 5;
+                        init.animateDropEnemy(child);
+
+                        init.enemy.removeChild(child.bar);
+                        init.enemy.removeChild(child);
+
+                        init.score.text = "SCORE: " + SCORE;
+                        init.money.text = "MONEY: " + MONEY + "$";
+                        init.addEnemy();
+
+
 
                     }
                 }
@@ -103,7 +123,7 @@ Init = function Init() {
 };
 
 Init.prototype.loadProgressHandler = function (loader, resource) {
-    $('#pb_loader').text('LOADING...' + ' '+loader.progress+'%');
+    $('#pb_loader').text('LOADING...' + ' ' + loader.progress + '%');
 };
 
 Init.prototype.start = function () {
@@ -122,4 +142,43 @@ Init.prototype.start = function () {
 
 Init.prototype.addEnemy = function () {
     enemy = new Enemy();
+};
+
+Init.prototype.animateDropEnemy = function (enemy) {
+    init.space.tilePosition.x -= 7;
+    setTimeout(function(){
+        init.space.tilePosition.x += 7;
+    },25);
+
+    var frames = [];
+
+    for (var i = 0; i < 8; i++) {
+        var val = i < 8 ? '0' + i : i;
+
+        // magically works since the spritesheet was loaded with the pixi loader
+        frames.push(PIXI.Texture.fromFrame('rollSequence00' + val + '.png'));
+    }
+
+
+    // create a MovieClip (brings back memories from the days of Flash, right ?)
+    movie = new PIXI.extras.MovieClip(frames);
+
+    movie.position.set(300);
+
+    movie.x = enemy.x;
+    movie.y = enemy.y;
+
+    movie.anchor.set(0.5);
+    movie.animationSpeed = 0.2;
+
+    movie.play();
+
+    init.stage.addChild(movie);
+
+    setTimeout(function(){
+
+        init.stage.removeChild(movie);
+    },500);
+
+
 };

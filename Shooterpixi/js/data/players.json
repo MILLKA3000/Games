@@ -3,7 +3,7 @@
     "PLAYER_SPEED_SHIP_BULLET": 10,
     "PLAYER_SPEED_SHIP_SHOT": 250,
     "PLAYER_BULLET_DAMAGE": 10,
-    "ENEMY_COUNT": 10,
+    "ENEMY_COUNT": 50,
     "SHIPS":[
         {
           "SPEED": 4,

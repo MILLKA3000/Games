@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29a14ae8-fec4-41b0-826b-5af953c3c436" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Shooterpixi/js/data/levels/1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Shooterpixi/js/animate/animate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Shooterpixi/js/lib/jquery-2.1.4.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Shooterpixi/js/data/players.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Shooterpixi/js/data/setting.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Shooterpixi/js/loader/start.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shooterpixi/js/loader/assets.js" afterPath="$PROJECT_DIR$/Shooterpixi/js/loader/assets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shooterpixi/index.html" afterPath="$PROJECT_DIR$/Shooterpixi/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shooterpixi/js/render/init.js" afterPath="$PROJECT_DIR$/Shooterpixi/js/render/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shooterpixi/js/setting.js" afterPath="$PROJECT_DIR$/Shooterpixi/js/setting.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shooterpixi/js/enemy/ship.js" afterPath="$PROJECT_DIR$/Shooterpixi/js/enemy/ship.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shooterpixi/js/player/ship.js" afterPath="$PROJECT_DIR$/Shooterpixi/js/player/ship.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shooterpixi/js/player/shot.js" afterPath="$PROJECT_DIR$/Shooterpixi/js/player/shot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shooterpixi/js/data/players.json" afterPath="$PROJECT_DIR$/Shooterpixi/js/data/players.json" />
     </list>
     <ignored path="Games.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,8 +82,8 @@
       <file leaf-file-name="players.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Shooterpixi/js/data/players.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6873563" vertical-offset="65" max-vertical-offset="935">
-              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.09770115" vertical-offset="0" max-vertical-offset="935">
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -979,8 +966,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Shooterpixi/js/data/players.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6873563" vertical-offset="65" max-vertical-offset="935">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.09770115" vertical-offset="0" max-vertical-offset="935">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding />
         </state>
       </provider>

@@ -42,7 +42,7 @@ Ship.prototype.controls = function(){
     };
 
     document.onmousedown = function(e) {
-        interval = setInterval(checkCursor, SPEED_SHIP_SHOT);
+        interval = setInterval(checkCursor, player.PLAYER_SPEED_SHIP_SHOT);
     };
 
     document.onmouseup = function() {

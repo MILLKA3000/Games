@@ -1,0 +1,50 @@
+{
+  "players": {
+    "PLAYER_SPEED_SHIP_BULLET": 10,
+    "PLAYER_SPEED_SHIP_SHOT": 250,
+    "PLAYER_BULLET_DAMAGE": 10,
+    "ENEMY_COUNT": 10,
+    "SHIPS":[
+        {
+          "SPEED": 4,
+          "HEALTH": 20,
+          "SCORE":100,
+          "MONEY":5,
+          "IMG":"imgs/ship2.gif"
+        },
+        {
+          "SPEED": 2,
+          "HEALTH": 50,
+          "SCORE":120,
+          "MONEY":10,
+          "IMG":"imgs/ship3.gif"
+        },
+        {
+          "SPEED": 8,
+          "HEALTH": 10,
+          "SCORE":50,
+          "MONEY":2,
+          "IMG":"imgs/ship1.gif"
+
+        },
+      {
+        "SPEED": 8,
+        "HEALTH": 10,
+        "SCORE":50,
+        "MONEY":2,
+        "IMG":"imgs/ship1.gif"
+
+      },
+      {
+        "SPEED": 3,
+        "HEALTH": 60,
+        "SCORE":250,
+        "MONEY":25,
+        "IMG":"imgs/ship3.png"
+
+      }
+    ],
+    "PLAYER_SCORE": 0,
+    "PLAYER_MONEY": 0
+  }
+}
